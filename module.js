@@ -21,3 +21,20 @@
 //   username: 'user2',
 //   email: 'user2@example.com'
 // }
+
+const userApi = (function() {
+  let id = 0;
+
+  return {
+    fetch: function() {
+      id++;
+
+      return {
+        id: id,
+        username: `user${id}`,
+        email: `user${id}@example.com`
+      };
+    }
+  };
+})();
+console.log('logging userApi', userApi);
